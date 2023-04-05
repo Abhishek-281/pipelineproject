@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage("build")  {
             steps {
-                    sh 'npm install'
-                    sh 'npm run build'
-                }
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
         stage("deployment")  {
             steps {
                 sshagent(['Deploy']) {
